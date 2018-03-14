@@ -11,14 +11,13 @@
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld'
 
 import Top from "./Top";
 import Footer from './Footer'
 import ModalRight from './ModalRight'
 import ModalLeft from './ModalLeft'
 
-
+const OtherMassivePage = r => require.ensure([], () => r(require('@/components/HelloWorld')))
 
 export default {
   name: "App",
@@ -30,12 +29,8 @@ export default {
     this.$router.addRoutes([{
       path: '/',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: OtherMassivePage
     }]);
   }
 };
 </script>
-
-<style>
-
-</style>
