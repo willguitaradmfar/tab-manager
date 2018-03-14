@@ -11,15 +11,27 @@
 </template>
 
 <script>
+import HelloWorld from '@/components/HelloWorld'
+
 import Top from "./Top";
 import Footer from './Footer'
 import ModalRight from './ModalRight'
 import ModalLeft from './ModalLeft'
 
+
+
 export default {
   name: "App",
   components: {
     Top, Footer, ModalRight, ModalLeft
+  },
+  created() {
+   
+    this.$router.addRoutes([{
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    }]);
   }
 };
 </script>
